@@ -9,6 +9,7 @@ export const getPost = /* GraphQL */ `
       location
       description
       image
+      username
     }
   }
 `;
@@ -25,6 +26,7 @@ export const listPosts = /* GraphQL */ `
         location
         description
         image
+        username
       }
       nextToken
     }

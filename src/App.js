@@ -14,6 +14,7 @@ import Post from './Post';
 import Header from './Header';
 import CreatePost from './CreatePost';
 import Button from './Button';
+import Profile from './Profile';
 
 function Router() {
   /* create a couple of pieces of initial state */
@@ -26,7 +27,7 @@ function Router() {
   }, []);
   async function fetchPosts() {
     /* query the API, ask for 100 items */
-    let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }});
+    let postData = await API.graphql({ query: listPosts, variables: { limit: 100 }, authmode: 'API_KEY',});
     let postsArray = postData.data.listPosts.items;
     /* map over the image keys in the posts array, get signed image URLs for each image */
     postsArray = await Promise.all(postsArray.map(async post => {
@@ -47,6 +48,9 @@ function Router() {
             <Switch>
               <Route exact path="/" >
                 <Posts posts={posts} />
+              </Route>
+              <Route exact path="/profile" >
+                <Profile />
               </Route>
               <Route path="/post/:id" >
                 <Post />

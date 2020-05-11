@@ -7,6 +7,7 @@ export default function Header() {
     <div className={headerContainer}>
       <h1 className={headerStyle}>Postagram</h1>
       <Link to="/" className={linkStyle}>All Posts</Link>
+      <Link to="/profile" className={linkStyle}>Profile</Link>
     </div>
   )
 }

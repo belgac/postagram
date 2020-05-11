@@ -12,6 +12,7 @@ export const createPost = /* GraphQL */ `
       location
       description
       image
+      username
     }
   }
 `;
@@ -26,6 +27,7 @@ export const updatePost = /* GraphQL */ `
       location
       description
       image
+      username
     }
   }
 `;
@@ -40,6 +42,7 @@ export const deletePost = /* GraphQL */ `
       location
       description
       image
+      username
     }
   }
 `;
